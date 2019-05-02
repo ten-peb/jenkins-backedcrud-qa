@@ -3,7 +3,9 @@ node("master"){
   def String repo = 'git@github.com:tenna-llc/backend-crud.git'
   def String cloneto = 'backend-crud'
   def String stage = '/data/staging/backend'  
-  stage("init"){
+
+  stage("init") {
+    sh('rm -rf ' + cloneto)  /// clean before run
     doGitClone(repo,cloneto,"master")
   }
   stage("build"){
