@@ -3,13 +3,11 @@ node("master"){
   def String cloneto = 'backend-crud'
   def String stage = '/data/staging/backend'  
 
-//  stage("init") {
-//    sh('rm -rf ' + cloneto)  /// clean before run
-//    // doGitClone(repo,cloneto,"master")
-//  }
-  stage("build"){
+  stage("init") {
+    sh('rm -rf ' + cloneto)  /// clean before run
+     doGitClone(repo,cloneto,"master")
   }
-  stage("stage"){
+  stage("send to stage"){
     dir(cloneto){
       sh('rm -rf ' + stage + '/*')
       sh('cp -rp app ' + stage + '/')
@@ -18,8 +16,10 @@ node("master"){
     }
   }
   stage("notify qa"){
+  
   }
   stage("trigger container build"){
+  
   }
   
 }
