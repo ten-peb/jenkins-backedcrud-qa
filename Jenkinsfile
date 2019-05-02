@@ -12,8 +12,8 @@ node("master"){
     dir(cloneto){
       sh('rm -rf ' + stage + '/*')
       sh('cp -rp app ' + stage + '/')
-      sh('cp -rp config + stage +'/')
-      sh('cp package.json '+stage+'/')
+      sh('cp -rp config ' + stage +'/')
+      sh('cp package.json ' +stage+'/')
     }
   }
   stage("notify qa"){
