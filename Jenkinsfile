@@ -1,7 +1,7 @@
 node("master"){
   def String repo = 'git@github.com:tenna-llc/backend-crud.git'
   def String cloneto = 'backend-crud'
-  def String stage = '/data/staging/backend'  
+  def String staging = '/data/staging/backend'  
 
   stage ("Clone Repo") {
     sh('rm -rf ' + cloneto)  /// clean before run
@@ -9,10 +9,10 @@ node("master"){
   }
   stage ("send to stage"){
     dir(cloneto){
-      sh('rm -rf ' + stage + '/*')
-      sh('cp -rp app ' + stage + '/')
-      sh('cp -rp config ' + stage +'/')
-      sh('cp package.json ' + stage +'/')
+      sh('rm -rf ' + staging + '/*')
+      sh('cp -rp app ' + staging + '/')
+      sh('cp -rp config ' + staging +'/')
+      sh('cp package.json ' + staging +'/')
     }
   }
   stage ("notify qa"){
