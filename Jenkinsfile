@@ -4,7 +4,7 @@ node("master"){
   def String cloneto='backend-crud'
   
   stage("init"){
-    doGetClone(repo,cloneto)
+    doGitClone(repo,cloneto)
   }
   stage("build"){
   }
