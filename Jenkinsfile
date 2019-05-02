@@ -3,7 +3,7 @@ node("master"){
   def String cloneto = 'backend-crud'
   def String stage = '/data/staging/backend'  
 
-  stage("init") {
+  stage("Clone Repo") {
     sh('rm -rf ' + cloneto)  /// clean before run
      doGitClone(repo,cloneto,"master")
   }
