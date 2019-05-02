@@ -5,7 +5,7 @@ node("master"){
 
   stage("init") {
     sh('rm -rf ' + cloneto)  /// clean before run
-    doGitClone(repo,cloneto,"master")
+    // doGitClone(repo,cloneto,"master")
   }
   stage("build"){
   }
