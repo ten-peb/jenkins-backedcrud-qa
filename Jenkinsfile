@@ -10,8 +10,7 @@ node("master"){
   }
   stage("stage"){
     dir(cloneto){
-      sh('rm -rf /data/stage/backend')
-      sh('mkdir -vp /data/stage/backend')
+      sh('rm -rf /data/stage/backend/*')
       sh('cp -rp app /data/stage/backend/')
       sh('cp -rp config /data/stage/backend/')
       sh('cp package.json /data/stage/backend/')
