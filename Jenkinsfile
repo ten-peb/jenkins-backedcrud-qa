@@ -1,10 +1,10 @@
 //
 node("master"){
-  def String repo='git@github.com:tenna-llc/backend-crud.git'
-  def String cloneto='backend-crud'
+  def String repo = 'git@github.com:tenna-llc/backend-crud.git'
+  def String cloneto = 'backend-crud'
   def String stage = '/data/staging/backend'  
   stage("init"){
-    doGitClone(repo,cloneto)
+    doGitClone(repo,cloneto,"master")
   }
   stage("build"){
   }
