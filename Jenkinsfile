@@ -19,7 +19,7 @@ node("master"){
   
   }
   stage ("trigger container build"){
-  
+    build('BuildDockerContainers')
   }
   
 }
