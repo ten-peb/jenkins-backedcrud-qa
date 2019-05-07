@@ -8,10 +8,17 @@ node("master"){
      doGitClone(repo,cloneto,"development")
   }
   stage ("send to stage"){
+    def String[] confFiles=[
+    'package.json','docker.env.sample','env.sample','.sequelizerc'
+    ]
     dir(cloneto){
       sh('rm -rf ' + staging + '/*')
       sh('cp -rp app ' + staging + '/')
-      sh('cp package.json ' + staging +'/')
+      sh('cp -rp test ' + staging + '/')
+      for(String fname:confFiles){
+        sh('cp ' + fname + ' ' + staging + '/')
+      }
+      
     }
   }
   stage ("notify qa"){
