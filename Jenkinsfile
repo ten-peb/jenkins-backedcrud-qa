@@ -9,7 +9,7 @@ node("master"){
   }
   stage ("send to stage"){
     def String[] confFiles=[
-    'package.json','docker.env.sample','env.sample','.sequelizerc'
+    'package.json','.docker.env.sample','.env.sample','.sequelizerc'
     ]
     dir(cloneto){
       sh('rm -rf ' + staging + '/*')
