@@ -4,8 +4,8 @@ node("master"){
   def String staging = '/data/staging/backend'  
 
   stage ("Clone Repo") {
-    sh('rm -rf ' + cloneto)  /// clean before run
-     doGitClone(repo,cloneto,"master")
+    sh('rm -rf ' + cloneto)  // clean before run
+     doGitClone(repo,cloneto,"development")
   }
   stage ("send to stage"){
     dir(cloneto){
