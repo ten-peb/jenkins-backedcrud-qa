@@ -9,8 +9,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 WORKDIR /opt/tenna-crud
 
 COPY ./backend/ /opt/tenna-crud/
-COPY ./config/stuff /opt/tenna-crud/stuff
-COPY ./config/docker-stuff /opt/tenna-crud/docker-stuff
+COPY ./env/stuff /opt/tenna-crud/stuff
+COPY ./env/docker-stuff /opt/tenna-crud/docker-stuff
 RUN  cat docker-stuff stuff > .env 
 
 
