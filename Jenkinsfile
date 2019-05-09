@@ -8,6 +8,7 @@ node("master"){
   def String image_tag = "0.5.0"
   stage ("Clone Repo") {
     sh('rm -rf ' + cloneto)  // clean before run
+    sh ('rm -rf ' + self_repo)
      doGitClone(repo,cloneto,"development")
      doGitClone(self_repo,self_clone_to)
   }
@@ -17,7 +18,8 @@ node("master"){
     ]
     dir(cloneto){
         sh('rm -rf ' + staging + '/*')
-        sh('find . -depth -print | egrep -v ".git" | cpio -pdmv ' + staging + '/')
+        sh('find . -depth -print |  cpio -pdmv ' + staging + '/')
+	sh('rm -rf ' + staging + '/.git);
     }
   }
   stage("create image"){
