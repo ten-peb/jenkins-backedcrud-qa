@@ -16,14 +16,7 @@ node("master"){
     'package.json','.docker.env.sample','.env.sample','.sequelizerc'
     ]
     dir(cloneto){
-//      sh('rm -rf ' + staging + '/*')
-//      sh('cp -rp app ' + staging + '/')
-//      sh('cp -rp test ' + staging + '/')
-//      for(String fname:confFiles){
-//        sh('cp ' + fname + ' ' + staging + '/')
-//      }
         sh('find . -depth -print | cpio -pdmv ' + staging + '/')
-      
     }
   }
   stage("create image"){
@@ -31,6 +24,7 @@ node("master"){
       sh('cp -rp ' + staging + ' ./')
       sh('docker build -t ' + image_name + ':' + image_tag + ' .')
       sh('docker build -t ' + image_name + ':' + 'latest')
+    }
   }
   stage ("notify qa"){
     sendEmail(qaTeam(),'New Docker Image published to QA Docker',
