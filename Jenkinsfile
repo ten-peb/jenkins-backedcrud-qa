@@ -16,7 +16,8 @@ node("master"){
     'package.json','.docker.env.sample','.env.sample','.sequelizerc'
     ]
     dir(cloneto){
-        sh('find . -depth -print | cpio -pdmv ' + staging + '/')
+        sh('rm -rf ' + staging + '/*')
+        sh('find . -depth -print | egrep -v ".git" | cpio -pdmv ' + staging + '/')
     }
   }
   stage("create image"){
