@@ -1,0 +1,54 @@
+NODE_ENV=development
+
+PORT=3000
+
+DB_NAME=database
+DB_USER=postgres
+DB_PASS=postgres
+DB_DIALECT=postgres
+DB_LOGGING=false
+
+REDIS_HOST=redis
+REDIS_PORT=6379
+REDIS_PASS=test
+
+AWS_ENDPOINT=localhost:4572
+AWS_SECRET=foobar
+AWS_ACCESS=foobar
+AWS_BUCKET=development
+AWS_REGION=localstack
+AWS_SSLENABLED=false
+AWS_CDN=http://localhost:4572/development/
+
+SENDGRID_API_USER=
+SENDGRID_API_KEY=
+
+SECRET=development_secret
+JWT_EXPIRATION=1209600
+JWT_RESET_EXPIRATION=1209600
+
+TEST=controllers
+TEST_SERVER=http://localhost:3000
+TEST_REMOVE_TEST_DATA=yes
+TEST_USER_EMAIL=poweruser@tenna-test.com
+TEST_USER_PASSWORD=admin
+TEST_USER_ID=13fa59e3-1fcb-4640-9263-a86077f2bf6f
+TEST_ACCOUNT_ID=5203f6ef-e993-4928-ae04-6bf58afe8540
+TEST_CONTACT_ID=08545f61-7aa0-46a0-ab7e-bcd6455496bc
+TEST_DEPARTMENT_ID=8915cd83-9bbf-46a7-b423-985c67df3dd0
+TEST_ROLE_ID=3622569f-b1eb-4ada-9320-594aa1b981e5
+TEST_SUPER_ADMIN_EMAIL=admin@tenna.com
+TEST_SUPER_ADMIN_PASSWORD=admin
+
+# enabled colorful stdout print
+FORCE_COLOR=yes
+
+# Sequelize seeding configuration (enable for development or testing only).
+SEED_DEV_DATA=true
+SEED_NUMBER_ASSETS=200
+
+# Debug module pattern (leave empty if no debug messages are required).
+DEBUG=app:*
+
+# Docker 'npm run' argument. Use dev:docker to enable Node.JS debugging.
+NPM_RUN_ARG=dev

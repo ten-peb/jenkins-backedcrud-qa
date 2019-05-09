@@ -1,0 +1,6 @@
+NODE_ENV=development
+DB_HOST=postgres
+DB_PORT=5432
+REDIS_HOST=redis
+AWS_ENDPOINT=localstack:4572
+AWS_CDN=http://localhost:4572/development/
