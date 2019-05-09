@@ -19,7 +19,7 @@ node("master"){
     dir(cloneto){
         sh('rm -rf ' + staging + '/*')
         sh('find . -depth -print |  cpio -pdmv ' + staging + '/')
-	sh('rm -rf ' + staging + '/.git);
+	sh('rm -rf ' + staging + '/.git');
     }
   }
   stage("create image"){
