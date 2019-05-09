@@ -26,7 +26,7 @@ node("master"){
     dir(self_clone_to + '/backend'){
       sh('cp -rp ' + staging + ' ./')
       sh('docker build -t ' + image_name + ':' + image_tag + ' .')
-      sh('docker build -t ' + image_name + ':' + 'latest')
+      sh('docker build -t ' + image_name + ':' + 'latest' + ' .')
     }
   }
   stage ("notify qa"){
