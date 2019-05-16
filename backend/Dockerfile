@@ -26,7 +26,8 @@ ENV WAIT4ITURL="${GITHUB_REPO}/${REL_PATH}"
 RUN curl -o /usr/local/bin/waitforit -sSL  ${WAIT4ITURL} && \
     chmod +x /usr/local/bin/waitforit
 
-# CMD ["node","/opt/tenna-crud/app/www"]
+COPY host_function.sh /opt/puppetlabs/facter/facts.d/host_function.sh
+RUN chmod 755 /opt/puppetlabs/facter/facts.d/host_function.sh
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
