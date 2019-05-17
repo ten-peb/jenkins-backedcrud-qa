@@ -8,7 +8,7 @@ node("master"){
   def String image_tag = "0.5.0"
   stage ("Clone Repo") {
     sh('rm -rf ' + self_clone_to )  // clean before run
-    sh('mkdir -vp ' $self_clone_to + '/backend/' + cloneto) 
+    sh('mkdir -vp ' + self_clone_to + '/backend/' + cloneto) 
      
      doGitClone(self_repo,self_clone_to)
      dir(self_clone_to + '/backend') {
