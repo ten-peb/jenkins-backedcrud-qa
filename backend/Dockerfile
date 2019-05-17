@@ -8,7 +8,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 
 WORKDIR /opt/tenna-crud
 
-COPY ./backend/ /opt/tenna-crud/
+COPY ./be/ /opt/tenna-crud/
 COPY ./env/DOT.env /opt/tenna-crud/.env
 
 RUN npm install --quiet
