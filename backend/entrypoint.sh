@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+cd /opt/tenna-crud/app/www && npm install 
 node /opt/tenna-crud/app/www
 
 while /bin/true
