@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd /opt/tenna-crud && sed -i -e '/DBHOST=/ s/localhost/postgres/' .env
+
 cd /opt/tenna-crud && npm install 
 cd /opt/tenna-crud && npm run dev  
 
