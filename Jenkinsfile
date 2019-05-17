@@ -20,6 +20,7 @@ node("master"){
         sh('rm -rf ' + staging + '/*')
         sh('find . -depth -print |  cpio -pdmv ' + staging + '/')
 	sh('rm -rf ' + staging + '/.git');
+	sh('rm -rf ' + staging + '/.env');
     }
   }
   stage("create image"){
