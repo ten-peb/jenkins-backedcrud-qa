@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cd /opt/tenna-crud/ && npm install 
-node /opt/tenna-crud
+cd /opt/tenna-crud && npm install 
+cd /opt/tenna-crud && npm run dev  
 
 while /bin/true
 do
